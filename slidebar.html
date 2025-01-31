@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Sliding Search Bar</title>
+  <!-- Link to Font Awesome for modern icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .search-bar {
+      position: fixed;
+      top: 50px;
+      right: -300px;
+      width: 250px;
+      height: 40px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: right 0.3s ease;
+      padding: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #search-input {
+      width: 80%;
+      padding: 8px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+    }
+
+    #search-btn {
+      padding: 8px 12px;
+      background-color: #5a67d8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #search-btn:hover {
+      background-color: #434190;
+    }
+
+    #toggle-search {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: #5a67d8;
+      transition: transform 0.3s ease;
+    }
+
+    #toggle-search:hover {
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Search Bar -->
+  <div id="search-bar" class="search-bar">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button id="search-btn">Search</button>
+  </div>
+
+  <!-- Modern Search Icon -->
+  <button id="toggle-search"><i class="fas fa-search"></i></button>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Advanced jQuery
+    $(document).ready(function() {
+      $("#toggle-search").click(function() {
+        const searchBar = $("#search-bar");
+        const currentRight = searchBar.css("right");
+
+        // Toggle the search bar visibility with advanced animation
+        if (currentRight === "0px") {
+          searchBar.animate({ right: "-300px" }, 300);  // Slide out effect
+        } else {
+          searchBar.animate({ right: "0px" }, 300);  // Slide in effect
+        }
+      });
+
+      // Optional: Focus input when search bar is shown
+      $("#search-input").focus(function() {
+        $(this).css("border", "1px solid #5a67d8");
+      }).blur(function() {
+        $(this).css("border", "1px solid #ccc");
+      });
+    });
+  </script>
+
+</body>
+</html>

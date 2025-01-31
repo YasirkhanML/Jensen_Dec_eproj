@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Home Interior Design</title>
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease; /* Global page transition */
+}
+
+/* Section Styling */
+section {
+    padding: 50px 0;
+}
+
+/* About Us Section */
+.about-us {
+    background-color: #fff;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.about-us h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeInText 1.2s 0.5s ease-in-out forwards;
+}
+
+/* Statistics Section */
+.statistics {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 0.5s forwards;
+}
+
+.statistics h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    display: inline-block;
+    width: 45%;
+    margin: 10px;
+    opacity: 0;
+    animation: slideUp 1s ease-in-out 0.7s forwards;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff6347;
+    transform: scale(0);
+    animation: scaleUp 1s ease-in-out 0.9s forwards;
+}
+
+.stat-item p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Features Section */
+.features {
+    background-color: #f4f4f4;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1.2s forwards;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    animation: slideIn 0.8s ease-out forwards 1.5s;
+}
+
+.feature {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1.5s forwards;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature:hover {
+    transform: translateY(-10px); /* Hover effect */
+}
+
+.feature img {
+    width: 50%;
+    margin-right: 20px;
+    opacity: 0;
+    animation: fadeInImage 1s ease-in-out 1.7s forwards;
+}
+
+.feature-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-text p {
+    font-size: 1rem;
+}
+
+/* Team Section */
+.team {
+    background-color: #fff;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 2s forwards;
+}
+
+.team h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 2.5s forwards;
+}
+
+.team-member {
+    width: 30%;
+    text-align: center;
+    opacity: 0;
+    animation: slideUp 1s ease-in-out 2.7s forwards;
+    transform: translateY(20px);
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover img {
+    transform: scale(1.1);
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #ff6347;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 3s forwards;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.testimonial {
+    padding: 20px;
+    background-color: #444;
+    border-radius: 8px;
+    opacity: 0;
+    animation: slideUp 1s ease-in-out 3.3s forwards;
+}
+
+.testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial:hover img {
+    transform: scale(1.1);
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.testimonial span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Global Transitions */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInImage {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .feature {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+    
+        </style>
+</head>
+<body>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about-us">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a passionate team dedicated to transforming spaces with innovative and functional interior designs. With years of experience, we craft personalized solutions for your home, blending comfort with style.</p>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="statistics">
+        <div class="container">
+            <h2>Our Impact</h2>
+            <div class="stat-item">
+                <div class="stat-number" data-stat="120">120</div>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-stat="350">350</div>
+                <p>Happy Clients</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content with Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <div class="feature">
+                <img src="./images/background.jpg" alt="Creative Designs">
+                <div class="feature-text">
+                    <h3>Creative Designs</h3>
+                    <p>We offer creative, innovative interior designs tailored to your specific needs and preferences, making your space truly unique.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="./images/interior.jpg" alt="Affordable Solutions">
+                <div class="feature-text">
+                    <h3>Affordable Solutions</h3>
+                    <p>Our designs don't just look good; they're budget-friendly, ensuring the best value without compromising on quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Meet Our Creative Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="./images/areeba.jpg" alt="Team Member 1">
+                    <h3>AREEBASHAIKH</h3>
+                </div>
+                <div class="team-member">
+                    <img src="./images/saman.jpg" alt="Team Member 2">
+                    <h3>SAMAN ALI</h3>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="testimonial">
+                        <p>"The team transformed our living room into something magical. I am so pleased with the results!"</p>
+                        <span>- Alice Johnson</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial">
+                        <p>"A wonderful experience working with HomeStyle! They really understood my vision and executed it perfectly."</p>
+                        <span>- Robert Brown</span>
+                    </div>
+                </div>
+                <!-- Add more testimonials as needed -->
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                dots: true,
+            });
+
+            // Stats animation
+            $(window).on('scroll', function() {
+                $('.stat-number').each(function() {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
+                        var $this = $(this);
+                        $this.text($this.data('stat'));
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

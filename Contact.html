@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 950px;
+            margin: 80px auto;
+            color: black;
+            line-height: 1.5;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .icon {
+            background-color: black;
+            border-radius: 30px;
+            padding: 15px;
+            vertical-align: top;
+        }
+
+        .contact-info {
+            display: inline-block;
+            padding: 4px 20px 0px 20px;
+        }
+
+        .address-line {
+            margin-top: 40px;
+        }
+
+        .col-1 {
+            width: 530px;
+        }
+
+        .col-2 {
+            flex: 1 1 auto;
+            background-color: white;
+        }
+
+        .form-container {
+            color: #000;
+            padding: 30px;
+        }
+
+        .contact-info-title {
+            color: #01bdd4;
+        }
+
+        .form-row {
+            padding-bottom: 30px;
+        }
+
+        .form-field {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #000;
+        }
+
+        .send-btn {
+            border: 0px;
+            padding: 12px 26px;
+            background-color: #01bdd4;
+            color: white;
+        }
+
+        @media all and (max-width: 1024px) {
+            .container {
+                width: auto;
+                padding: 30px;
+            }
+            .col-1 {
+                width: 360px;
+            } 
+        }
+
+        @media all and (max-width: 700px) {
+            .content {
+                display: block;
+            }
+            .col-2 {
+                margin-top: 40px;
+            } 
+            .col-1 {
+                width: 100%;
+            }
+        }
+
+        @media all and (max-width: 500px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <nav class="bg-white shadow-md" style="padding: 20px 40px;">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="./logo.png" alt="Furnixar Logo" class="h-8 w-8">
+        <span class="text-xl font-bold text-gray-800">Jensen Decor</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="flex space-x-8">
+        <a href="./index.html" style="font-size: 18px; text-decoration: none; position: relative; overflow: hidden; color: #4a5568;" 
+           onmouseover="this.style.setProperty('--underline-width', '100%');" 
+           onmouseout="this.style.setProperty('--underline-width', '0');">
+          <span style="position: relative; z-index: 1;">Home</span>
+          <span style="content: ''; position: absolute; bottom: 0; left: 0; height: 3px; background: black; width: var(--underline-width, 0); transition: width 0.3s;"></span>
+        </a>
+        <a href="./shopin.html" style="font-size: 18px; text-decoration: none; position: relative; overflow: hidden; color: #4a5568;" 
+           onmouseover="this.style.setProperty('--underline-width', '100%');" 
+           onmouseout="this.style.setProperty('--underline-width', '0');">
+          <span style="position: relative; z-index: 1;">Shop In</span>
+          <span style="content: ''; position: absolute; bottom: 0; left: 0; height: 3px; background: black; width: var(--underline-width, 0); transition: width 0.3s;"></span>
+        </a>
+        <a href="./blog.html" style="font-size: 18px; text-decoration: none; position: relative; overflow: hidden; color: #4a5568;" 
+           onmouseover="this.style.setProperty('--underline-width', '100%');" 
+           onmouseout="this.style.setProperty('--underline-width', '0');">
+          <span style="position: relative; z-index: 1;">Blog</span>
+          <span style="content: ''; position: absolute; bottom: 0; left: 0; height: 3px; background: black; width: var(--underline-width, 0); transition: width 0.3s;"></span>
+        </a>
+        <a href="./about us.html" style="font-size: 18px; text-decoration: none; position: relative; overflow: hidden; color: #4a5568;" 
+           onmouseover="this.style.setProperty('--underline-width', '100%');" 
+           onmouseout="this.style.setProperty('--underline-width', '0');">
+          <span style="position: relative; z-index: 1;">About Us</span>
+          <span style="content: ''; position: absolute; bottom: 0; left: 0; height: 3px; background: black; width: var(--underline-width, 0); transition: width 0.3s;"></span>
+        </a>
+        <a href="./Contact.html" style="font-size: 18px; text-decoration: none; position: relative; overflow: hidden; color: #4a5568;" 
+           onmouseover="this.style.setProperty('--underline-width', '100%');" 
+           onmouseout="this.style.setProperty('--underline-width', '0');">
+          <span style="position: relative; z-index: 1;">Contact</span>
+          <span style="content: ''; position: absolute; bottom: 0; left: 0; height: 3px; background: black; width: var(--underline-width, 0); transition: width 0.3s;"></span>
+        </a>
+      </div>
+
+      <!-- Icons -->
+      <div class="flex items-center space-x-6">
+        <a href="./login.html" style="font-size: 18px; text-decoration: none; position: relative; overflow: hidden; color: #4a5568; display: flex; align-items: center;" 
+           onmouseover="this.style.setProperty('--underline-width', '80%');" 
+           onmouseout="this.style.setProperty('--underline-width', '0');">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3-4 3-4 0s4-3 4 0zM16 7.99l-4-4m0 8.01l-4-4M20 20H4v-2a4 4 0 014-4h8a4 4 0 014 4v2z" />
+          </svg>
+          <span class="dark" style="position: relative; z-index: 1;">Login</span>
+          <span style="content: ''; position: absolute; bottom: 0; left: 0; height: 3px; background: black; width: var(--underline-width, 0); transition: width 0.3s;"></span>
+        </a>
+
+        <a href="./signup.html" style="font-size: 18px; text-decoration: none; position: relative; overflow: hidden; color: #4a5568; display: flex; align-items: center;" 
+           onmouseover="this.style.setProperty('--underline-width', '80%');" 
+           onmouseout="this.style.setProperty('--underline-width', '0');">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3-4 3-4 0s4-3 4 0zM16 7.99l-4-4m0 8.01l-4-4M20 20H4v-2a4 4 0 014-4h8a4 4 0 014 4v2z" />
+          </svg>
+          <span class="dark" style="position: relative; z-index: 1;">Sign Up</span>
+          <span style="content: ''; position: absolute; bottom: 0; left: 0; height: 3px; background: black; width: var(--underline-width, 0); transition: width 0.3s;"></span>
+        </a>
+       
+      </div>
+    </div>
+  </nav>
+   
+    <div class="container">
+        <div class="text-center">
+            <h1>Contact Us</h1>
+            <div>
+We look forward to serving you.</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="col-1">
+                <div class="address-line">
+                    <i class="fa-solid fa-location-dot" onclick="getLocation()" style="cursor: pointer;"></i>
+                    <div class="contact-info">
+                        <div class="contact-info-title">Address</div>
+                        <div>Aptech</div>
+                        <div>North Nazimabad</div>
+                    </div>
+                </div>
+                <div class="address-line">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="contact-info">
+                        <div class="contact-info-title">Phone</div>
+                        <div>0300-0099878</div>
+                    </div>
+                </div>
+                <div class="address-line">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="contact-info">
+                        <div class="contact-info-title">Email</div>
+                        <div>jensen decor@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <form>
+                    <div class="form-container">
+                        <h2>Send Message</h2>
+                        <div class="form-row">
+                            <label>Full Name</label>
+                            <div>
+                                <input type="text" class="form-field" placeholder="Enter your full name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label>Email</label>
+                            <div>
+                                <input type="email" class="form-field" placeholder="Enter your email">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label>Type your message...</label>
+                            <div>
+                                <textarea class="form-field" placeholder="Write your message" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <input type="button" class="send-btn" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p id="output" style="margin-top: 20px; text-align: center; font-size: 16px; color: red;"></p>
+    </div>
+    <footer style="background-color: #0e0e0e; padding: 40px 20px; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+          <div style="margin-bottom: 30px;">
+            <h2 style="font-size: 28px; margin-bottom: 10px;">Jensen Decor</h2>
+            <p style="font-size: 14px; color: #b5b5b5;">
+              Jenson Decor is a premier home furnishings and interior design brand committed to transforming living spaces into stunning, functional works of art.With a dedication to craftsmanship, style, and quality, Jenson Decor offers a wide range of furniture, décor items, and accessories designed to suit every taste and lifestyle
+            </p>
+            <div>
+              <a href="#" style="color: #ffffff; margin: 0 8px; font-size: 16px; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" style="color: #ffffff; margin: 0 8px; font-size: 16px; text-decoration: none;"><i class="fab fa-twitter"></i></a>
+              <a href="#" style="color: #ffffff; margin: 0 8px; font-size: 16px; text-decoration: none;"><i class="fab fa-instagram"></i></a>
+              <a href="#" style="color: #ffffff; margin: 0 8px; font-size: 16px; text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: left;">
+            <div>
+              <h4 style="font-size: 16px; margin-bottom: 15px;">Sitemap</h4>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">About</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Team</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Clients</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Error</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="font-size: 16px; margin-bottom: 15px;">Others</h4>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Shipping Method</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Payment Method</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">My Account</a></li>
+                
+              </ul>
+            </div>
+            <div>
+              <h4 style="font-size: 16px; margin-bottom: 15px;">Shop</h4>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">ShopIn</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Cart</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Checkout</a></li>
+                
+              </ul>
+            </div>
+            <div>
+              <h4 style="font-size: 16px; margin-bottom: 15px;">Customer Service</h4>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">FAQs</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Terms & Conditions</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Return Policy</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #b5b5b5; text-decoration: none; font-size: 14px;">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top: 20px; font-size: 14px;">
+            <p>
+              © 2025 Jensen Decor. Developed<span style="color: red;"></span> by SAMAN ALI AND AREEBA SHAIKH
+            </p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        function getLocation() {
+            const output = document.getElementById("output");
+
+            // Check if geolocation is available
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+
+                        // Display the fetched latitude and longitude
+                        output.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+
+                        // Open Google Maps centered on the fetched location
+                        const googleMapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                        window.open(googleMapsUrl, '_blank');
+                    },
+                    (error) => {
+                        // Handle error scenarios
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                output.textContent = "User denied the request for Geolocation.";
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                output.textContent = "Location information is unavailable.";
+                                break;
+                            case error.TIMEOUT:
+                                output.textContent = "The request to get user location timed out.";
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                output.textContent = "An unknown error occurred.";
+                                break;
+                        }
+                    }
+                );
+            } else {
+                output.textContent = "Geolocation is not supported by your browser.";
+            }
+        }
+    </script>
+</body>
+</html>
